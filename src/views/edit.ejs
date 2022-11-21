@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('layouts/head.ejs') %>
+<body>
+    
+    <form action="/edit/<%= user._id%>" method="post">
+
+        <div>
+            <label for="name" aria-placeholder="Nome">Nome</label>
+            <input name="name" type="text" value="<%= user.name%>">
+        </div>
+
+        <div>
+            <label for="age" aria-placeholder="Idade" >Idade</label>
+            <input name="age" type="text" value="<%= user.age%>">
+        </div>
+
+        <div>
+            <label for="email" aria-placeholder="Email" > Email </label>
+            <input  name="email" type="email" value="<%= user.email%>">
+        </div>
+
+        <button type="submit">Salvar</button>
+
+    </form>
+    <br>
+    <a href="/list">Lista de Clientes</a>
+    <a href="/">PG INiCIAL</a>
+
+    <%- include('layouts/foot.ejs') %> 
+</body>
+</html>

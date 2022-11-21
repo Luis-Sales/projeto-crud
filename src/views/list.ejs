@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('layouts/head.ejs') %>
+
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 50%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+
+<body>
+    <h1>Lista de Clientes</h1><br>
+    <a href="/register">Formulario</a><br>
+    <a href="/">PG INCIAL</a>
+    <hr>
+
+
+    <table>
+        <tr>
+          <th>Email</th>
+          <th>Idade</th>
+          <th>Nome</th>
+          <th>Editar</th>
+          <th>Excluir</th>
+        </tr>
+        <% users.forEach(user => { %>
+                        <tr>
+          <td> <%= user.email %></td>
+          <td> <%= user.age %></td>
+          <td> <%= user.name %></td>
+          <td><a href="/edit?id=<%= user._id%>">Editar</a></td>
+          <td><a href="/remove/<%= user._id%>" id="exluir" type="submit">Excluir</a></td>
+        </tr>
+
+        <% }) %> 
+      </table>
+
+
+
+    
+ 
+
+
+    <%- include('layouts/foot.ejs') %> 
+</body>
+</html>

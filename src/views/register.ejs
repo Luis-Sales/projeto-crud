@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('layouts/head.ejs') %>
+<body>
+    
+    <form action="/register/add" method="post">
+
+        <div>
+            <label for="name" aria-placeholder="Nome">Nome</label>
+            <input name="name" type="text">
+        </div>
+
+        <div>
+            <label for="age" aria-placeholder="Idade" >Idade</label>
+            <input name="age" type="text">
+        </div>
+
+        <div>
+            <label for="email" aria-placeholder="Email" > Email </label>
+            <input  name="email" type="email">
+        </div>
+
+        <div>
+            <label for="password" aria-placeholder="Senha" >Password</label>
+            <input name="password" type="text">
+        </div>
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+    <br>
+    <a href="/list">Lista de Clientes</a>
+    <a href="/">PG INiCIAL</a>
+
+    <%- include('layouts/foot.ejs') %> 
+</body>
+</html>
